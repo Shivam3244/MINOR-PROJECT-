@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Prediction Result</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🎓 Student Prediction System
+        </div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/prediction">Prediction</a>
+            <a href="/students">Records</a>
+            <a href="/dashboard">Dashboard</a>
+        </div>
+
+    </nav>
+
+
+    <div class="container">
+
+        <h1>Student Prediction Result</h1>
+
+
+        <div class="result">
+
+            <h2>Prediction Completed</h2>
+
+            <p>
+                The student information has been successfully processed.
+            </p>
+
+
+            <h3>Student Name</h3>
+
+            <h2>
+                {{ student_name }}
+            </h2>
+
+
+            <h3>Placement Prediction</h3>
+
+            <h2>
+                {{ result }}
+            </h2>
+
+        </div>
+
+
+        <div style="text-align: center; margin-top: 30px;">
+
+            <a href="/prediction">
+                <button>
+                    Try Another Student
+                </button>
+            </a>
+
+            <a href="/students">
+                <button>
+                    View Records
+                </button>
+            </a>
+
+            <a href="/dashboard">
+                <button>
+                    Dashboard
+                </button>
+            </a>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

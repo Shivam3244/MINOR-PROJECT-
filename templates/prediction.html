@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Prediction</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+
+        <div class="logo">
+            🎓 Student Prediction System
+        </div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/prediction">Prediction</a>
+            <a href="/students">Records</a>
+            <a href="/dashboard">Dashboard</a>
+        </div>
+
+    </nav>
+
+
+    <!-- Prediction Form -->
+    <div class="container">
+
+        <h1>Student Prediction Form</h1>
+
+        <p style="text-align: center;">
+            Enter the student's basic, academic and skill details below.
+        </p>
+
+
+        <form method="POST" action="/predict">
+
+
+            <!-- Basic Details -->
+
+            <h2>Basic Details</h2>
+
+            <div class="form-group">
+
+                <label>Student Name:</label>
+
+                <input
+                    type="text"
+                    name="student_name"
+                    placeholder="Enter student name"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Roll Number:</label>
+
+                <input
+                    type="text"
+                    name="roll_number"
+                    placeholder="Enter roll number"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Course / Branch:</label>
+
+                <input
+                    type="text"
+                    name="course"
+                    placeholder="Example: BCA"
+                    required>
+
+            </div>
+
+
+            <!-- Academic Details -->
+
+            <h2>Academic Details</h2>
+
+
+            <div class="form-group">
+
+                <label>10th Percentage:</label>
+
+                <input
+                    type="number"
+                    min="0"
+                    max="100"
+                    step="0.01"
+                    name="tenth"
+                    placeholder="Enter 10th percentage"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>12th Percentage:</label>
+
+                <input
+                    type="number"
+                    min="0"
+                    max="100"
+                    step="0.01"
+                    name="twelfth"
+                    placeholder="Enter 12th percentage"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>CGPA:</label>
+
+                <input
+                    type="number"
+                    min="0"
+                    max="10"
+                    step="0.01"
+                    name="cgpa"
+                    placeholder="Enter CGPA"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Attendance Percentage:</label>
+
+                <input
+                    type="number"
+                    min="0"
+                    max="100"
+                    step="0.01"
+                    name="attendance"
+                    placeholder="Enter attendance percentage"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Number of Backlogs:</label>
+
+                <input
+                    type="number"
+                    min="0"
+                    name="backlogs"
+                    placeholder="Enter number of backlogs"
+                    required>
+
+            </div>
+
+
+            <!-- Skills and Experience -->
+
+            <h2>Skills & Experience</h2>
+
+
+            <div class="form-group">
+
+                <label>Number of Projects:</label>
+
+                <input
+                    type="number"
+                    min="0"
+                    name="projects"
+                    placeholder="Enter number of projects"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Number of Certifications:</label>
+
+                <input
+                    type="number"
+                    min="0"
+                    name="certifications"
+                    placeholder="Enter number of certifications"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Internship Experience:</label>
+
+                <select name="internship" required>
+
+                    <option value="">Select</option>
+
+                    <option value="1">Yes</option>
+
+                    <option value="0">No</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Technical Skills (out of 10):</label>
+
+                <input
+                    type="number"
+                    min="0"
+                    max="10"
+                    step="0.1"
+                    name="technical_skills"
+                    placeholder="Rate technical skills"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Communication Skills (out of 10):</label>
+
+                <input
+                    type="number"
+                    min="0"
+                    max="10"
+                    step="0.1"
+                    name="communication_skills"
+                    placeholder="Rate communication skills"
+                    required>
+
+            </div>
+
+
+            <!-- Submit -->
+
+            <div style="text-align: center; margin-top: 30px;">
+
+                <button type="submit">
+                    Predict Placement
+                </button>
+
+            </div>
+
+        </form>
+
+
+        <!-- Back Button -->
+
+        <div style="text-align: center; margin-top: 20px;">
+
+            <a href="/">
+                <button type="button">
+                    Back to Home
+                </button>
+            </a>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+
+<body>
+
+    <!-- Navigation Bar -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🎓 Student Prediction System
+        </div>
+
+        <div class="nav-links">
+
+            <a href="/">Home</a>
+
+            <a href="/prediction">
+                Prediction
+            </a>
+
+            <a href="/students">
+                Records
+            </a>
+
+            <a href="/dashboard">
+                Dashboard
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Dashboard Container -->
+
+    <div class="container">
+
+        <h1>Student Dashboard</h1>
+
+        <p style="text-align: center;">
+            Overview of student academic and placement predictions.
+        </p>
+
+
+        <!-- Dashboard Cards -->
+
+        <div style="
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 35px;
+        ">
+
+
+            <!-- Total Students -->
+
+            <div style="
+                flex: 1;
+                min-width: 200px;
+                padding: 25px;
+                text-align: center;
+                background: #eef4ff;
+                border-radius: 15px;
+                box-shadow: 0 5px 15px rgba(31, 60, 136, 0.10);
+            ">
+
+                <h2>Total Students</h2>
+
+                <h1 style="font-size: 45px;">
+                    {{ total_students }}
+                </h1>
+
+            </div>
+
+
+            <!-- Placement Predicted -->
+
+            <div style="
+                flex: 1;
+                min-width: 200px;
+                padding: 25px;
+                text-align: center;
+                background: #eaf8ef;
+                border-radius: 15px;
+                box-shadow: 0 5px 15px rgba(31, 60, 136, 0.10);
+            ">
+
+                <h2>Placement Predicted</h2>
+
+                <h1 style="
+                    font-size: 45px;
+                    color: #198754;
+                ">
+
+                    {{ placement_predicted }}
+
+                </h1>
+
+            </div>
+
+
+            <!-- Placement Not Predicted -->
+
+            <div style="
+                flex: 1;
+                min-width: 200px;
+                padding: 25px;
+                text-align: center;
+                background: #fff1f1;
+                border-radius: 15px;
+                box-shadow: 0 5px 15px rgba(31, 60, 136, 0.10);
+            ">
+
+                <h2>Placement Not Predicted</h2>
+
+                <h1 style="
+                    font-size: 45px;
+                    color: #dc3545;
+                ">
+
+                    {{ placement_not_predicted }}
+
+                </h1>
+
+            </div>
+
+        </div>
+
+
+        <!-- Placement Chart -->
+
+        <div style="
+            margin-top: 45px;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(31, 60, 136, 0.10);
+        ">
+
+            <h2 style="text-align: center;">
+                Placement Prediction Overview
+            </h2>
+
+
+            <div style="
+                max-width: 500px;
+                margin: 25px auto;
+            ">
+
+                <canvas id="placementChart"></canvas>
+
+            </div>
+
+        </div>
+
+
+        <!-- Dashboard Information -->
+
+        <div style="
+            margin-top: 40px;
+            padding: 25px;
+            background: #f8fbff;
+            border-radius: 15px;
+            text-align: center;
+        ">
+
+            <h2>Dashboard Overview</h2>
+
+            <p>
+                This dashboard provides an overview of students
+                entered into the prediction system and their
+                machine-learning prediction results.
+            </p>
+
+            <p style="font-size: 14px;">
+
+                <strong>Note:</strong>
+
+                Predictions are based on the project's
+                demonstration dataset and should not be treated
+                as a guarantee of actual placement.
+
+            </p>
+
+        </div>
+
+
+        <!-- Dashboard Buttons -->
+
+        <div style="
+            text-align: center;
+            margin-top: 30px;
+        ">
+
+            <a href="/prediction">
+
+                <button>
+                    Add New Student
+                </button>
+
+            </a>
+
+
+            <a href="/students">
+
+                <button>
+                    View Records
+                </button>
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- Chart Script -->
+
+    <script>
+
+        const placementPredicted =
+            Number("{{ placement_predicted }}");
+
+        const placementNotPredicted =
+            Number("{{ placement_not_predicted }}");
+
+
+        const ctx =
+            document.getElementById('placementChart');
+
+
+        new Chart(ctx, {
+
+            type: 'doughnut',
+
+
+            data: {
+
+                labels: [
+                    'Placement Predicted',
+                    'Placement Not Predicted'
+                ],
+
+
+                datasets: [{
+
+                    data: [
+                        placementPredicted,
+                        placementNotPredicted
+                    ]
+
+                }]
+
+            },
+
+
+            options: {
+
+                responsive: true,
+
+
+                plugins: {
+
+                    legend: {
+                        position: 'bottom'
+                    }
+
+                }
+
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>
