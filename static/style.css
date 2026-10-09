@@ -1,0 +1,478 @@
+/* =========================================
+   GENERAL PAGE
+   ========================================= */
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #eaf3ff, #f8fbff);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+
+/* =========================================
+   NAVIGATION BAR
+   ========================================= */
+
+.navbar {
+    background: white;
+    padding: 18px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #1f3c88;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #444;
+    margin-left: 25px;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #1f3c88;
+}
+
+
+/* =========================================
+   MAIN CARD
+   ========================================= */
+
+.container {
+    width: 80%;
+    max-width: 900px;
+    margin: 50px auto;
+    background: rgba(255, 255, 255, 0.92);
+    padding: 35px;
+    border-radius: 18px;
+    box-shadow: 0 8px 30px rgba(31, 60, 136, 0.12);
+}
+
+
+/* =========================================
+   HEADINGS
+   ========================================= */
+
+h1 {
+    text-align: center;
+    color: #1f3c88;
+}
+
+h2 {
+    color: #1f3c88;
+}
+
+p {
+    color: #555;
+    font-size: 17px;
+}
+
+
+/* =========================================
+   NORMAL BUTTONS
+   ========================================= */
+
+button {
+    background: linear-gradient(135deg, #1f3c88, #3267d6);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(31, 60, 136, 0.25);
+}
+
+
+/* =========================================
+   FORM
+   ========================================= */
+
+input,
+select {
+    width: 100%;
+    padding: 11px;
+    margin-top: 6px;
+    border: 1px solid #ccd5e0;
+    border-radius: 7px;
+    box-sizing: border-box;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #3267d6;
+    box-shadow: 0 0 5px rgba(50, 103, 214, 0.2);
+}
+
+label {
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+
+/* =========================================
+   RESULT BOX
+   ========================================= */
+
+.result {
+    text-align: center;
+    padding: 25px;
+    margin-top: 20px;
+    border-radius: 12px;
+    background: #eef4ff;
+}
+
+
+/* =========================================
+   HOME PAGE
+   ========================================= */
+
+.home-hero {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    box-sizing: border-box;
+}
+
+
+/* Main Home Card */
+
+.home-content {
+    width: 90%;
+    max-width: 1000px;
+    padding: 55px 45px;
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.88);
+
+    border: 1px solid rgba(255, 255, 255, 0.9);
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 20px 60px rgba(31, 60, 136, 0.15);
+
+    backdrop-filter: blur(10px);
+}
+
+
+/* Graduation Icon */
+
+.home-icon {
+    width: 80px;
+    height: 80px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #eef4ff;
+
+    border-radius: 50%;
+
+    font-size: 42px;
+
+    box-shadow:
+        0 8px 20px rgba(31, 60, 136, 0.12);
+}
+
+
+/* Home Heading */
+
+.home-content h1 {
+    max-width: 800px;
+
+    margin: 0 auto;
+
+    font-size: 42px;
+
+    line-height: 1.2;
+
+    color: #1f3c88;
+}
+
+
+/* Second Line of Heading */
+
+.home-content h1 span {
+    display: block;
+
+    color: #3267d6;
+
+    margin-top: 5px;
+}
+
+
+/* Home Description */
+
+.home-description {
+    max-width: 700px;
+
+    margin: 20px auto 30px;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    color: #555;
+}
+
+
+/* =========================================
+   START PREDICTION BUTTON
+   ========================================= */
+
+.start-prediction-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    padding: 16px 30px;
+
+    min-width: 250px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1f5fe0,
+            #3267d6
+        );
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 50px;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 10px 25px rgba(31, 95, 224, 0.30);
+
+    transition: all 0.3s ease;
+}
+
+
+.start-prediction-btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 30px rgba(31, 95, 224, 0.40);
+}
+
+
+.start-prediction-btn .arrow {
+    font-size: 24px;
+
+    transition: transform 0.3s ease;
+}
+
+
+.start-prediction-btn:hover .arrow {
+    transform: translateX(5px);
+}
+
+
+/* =========================================
+   HOME FEATURE CARDS
+   ========================================= */
+
+.home-features {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    margin-top: 50px;
+
+    flex-wrap: wrap;
+}
+
+
+.home-feature {
+    flex: 1;
+
+    min-width: 220px;
+
+    max-width: 280px;
+
+    padding: 25px 20px;
+
+    background: #f8fbff;
+
+    border-radius: 18px;
+
+    border: 1px solid #e5edf8;
+
+    transition: all 0.3s ease;
+}
+
+
+.home-feature:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 10px 25px rgba(31, 60, 136, 0.10);
+}
+
+
+.feature-icon {
+    font-size: 32px;
+
+    margin-bottom: 10px;
+}
+
+
+.home-feature h3 {
+    margin: 8px 0;
+
+    color: #1f3c88;
+}
+
+
+.home-feature p {
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    margin: 0;
+}
+
+
+/* =========================================
+   HOME PAGE BOTTOM MESSAGE
+   ========================================= */
+
+.home-message {
+    margin-top: 35px;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    color: #1f3c88;
+
+    letter-spacing: 1px;
+}
+
+
+.home-message span {
+    margin: 0 10px;
+
+    color: #3267d6;
+}
+
+
+/* =========================================
+   HOME PAGE NOTE
+   ========================================= */
+
+.home-note {
+    max-width: 850px;
+
+    margin: -20px auto 30px;
+
+    padding: 0 20px;
+
+    text-align: center;
+}
+
+
+.home-note p {
+    font-size: 13px;
+
+    color: #777;
+}
+
+
+/* =========================================
+   MOBILE DESIGN
+   ========================================= */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+
+    .nav-links a {
+        margin: 0 8px;
+    }
+
+
+    .container {
+        width: 85%;
+        margin: 25px auto;
+        padding: 25px;
+    }
+
+
+    .home-hero {
+        padding: 30px 15px;
+    }
+
+
+    .home-content {
+        width: 100%;
+
+        padding: 40px 20px;
+
+        border-radius: 20px;
+    }
+
+
+    .home-content h1 {
+        font-size: 30px;
+    }
+
+
+    .home-description {
+        font-size: 16px;
+    }
+
+
+    .start-prediction-btn {
+        min-width: 210px;
+
+        padding: 14px 22px;
+
+        font-size: 16px;
+    }
+
+
+    .home-feature {
+        max-width: 100%;
+    }
+
+}
